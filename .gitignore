@@ -1,0 +1,28 @@
+# Backend (Go)
+backend/server
+backend/server.exe
+backend/tmp/
+backend/.env
+backend/*.log
+
+# Frontend (Angular / Node)
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+frontend/.env
+frontend/coverage/
+frontend/out-tsc/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Docker
+.docker/
+
+# Database dumps
+*.sql.bak

@@ -1,0 +1,10 @@
+# Files ignored when uploading source for Cloud Run / Cloud Build.
+.git
+.gitignore
+.gcloudignore
+.env
+*.log
+*.md
+tmp/
+server
+server.exe
