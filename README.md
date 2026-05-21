@@ -169,27 +169,17 @@ Response envelope (all endpoints):
 * **CORS** open `*` for dev — narrow it for production.
 * **Frontend signals** — components prefer Angular 17 `signal()`/`computed()` for local state over RxJS subjects.
 
-## Deploy to Google Cloud (Always Free)
+## Live demo
 
-See [`deploy/README.md`](deploy/README.md) for the full step-by-step.
-TL;DR stack:
+| Layer    | Hosted on              | URL                                                       |
+| -------- | ---------------------- | --------------------------------------------------------- |
+| Frontend | Firebase Hosting       | <https://sonic-name-496908-g6-9625f.web.app>              |
+| Backend  | Google Cloud Run       | <https://itcc-backend-234535703471.us-central1.run.app>   |
+| Database | PostgreSQL on Compute Engine `e2-micro` VM | (private, behind firewall)            |
 
-| Layer    | Service              | Cost                          |
-| -------- | -------------------- | ----------------------------- |
-| Frontend | Firebase Hosting     | Free (Spark plan)             |
-| Backend  | Cloud Run            | Free (2M req + 360k GB-sec)   |
-| Database | e2-micro VM + Postgres | Free (1 instance in us-*)   |
+All three layers run within Google Cloud's **Always Free** tier — no monthly cost.
 
-Quick deploy after one-time setup:
-
-```bash
-# Backend
-gcloud run deploy itcc-backend --source ./backend --region us-central1 \
-  --allow-unauthenticated --set-env-vars="DB_HOST=$VM_IP,DB_USER=itcc_app,..."
-
-# Frontend (after editing environment.prod.ts with the Cloud Run URL)
-cd frontend && npm run build && firebase deploy --only hosting
-```
+> Step-by-step deploy notes are in [`deploy/README.md`](deploy/README.md).
 
 ## License
 
