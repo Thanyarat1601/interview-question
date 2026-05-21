@@ -1,4 +1,6 @@
 # Files ignored when uploading source for Cloud Run / Cloud Build.
+# NOTE: gitignore-style — bare `server` would match the cmd/server/ directory,
+# which breaks the Docker build. Use leading slash for root-only matches.
 .git
 .gitignore
 .gcloudignore
@@ -6,5 +8,5 @@
 *.log
 *.md
 tmp/
-server
-server.exe
+/server
+/server.exe

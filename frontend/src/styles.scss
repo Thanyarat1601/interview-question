@@ -47,7 +47,9 @@ button.danger:hover { filter: brightness(0.9); }
 button.success { background: var(--success); color: #fff; border-color: var(--success); }
 button:disabled { opacity: 0.5; cursor: not-allowed; }
 
-input, select, textarea {
+input:not([type="radio"]):not([type="checkbox"]):not([type="file"]),
+select,
+textarea {
   font-family: inherit;
   font-size: 0.95rem;
   padding: 0.5rem 0.75rem;
@@ -60,6 +62,11 @@ input:focus, select:focus, textarea:focus {
   outline: none;
   border-color: var(--primary);
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+input[type="radio"], input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+  cursor: pointer;
 }
 
 .card {

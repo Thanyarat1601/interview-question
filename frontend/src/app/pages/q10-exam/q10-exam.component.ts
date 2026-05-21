@@ -52,7 +52,7 @@ type Phase = 'name' | 'exam' | 'result';
         <p class="muted">ผู้สอบ: <strong>{{ studentName }}</strong> — ทั้งหมด {{ questions().length }} ข้อ</p>
         <ol class="qlist">
           <li *ngFor="let q of questions(); let i = index">
-            <strong>{{ i + 1 }}. {{ q.question_text }}</strong>
+            <strong>{{ q.question_text }}</strong>
             <div class="choices">
               <label *ngFor="let opt of ['A','B','C','D']">
                 <input type="radio" [name]="'q' + q.id" [value]="opt" [(ngModel)]="answers[q.id]" />
